@@ -1,14 +1,15 @@
-<!DOCTYPE html>
-<html>
-<body>
+{% extends "base.html" %}
 
-<h1>Members</h1>
-  
-<ul>
-  {% for x in paw_members %}
-    <li><a href="details/{{ x.id }}">{{ x.first_name }} {{ x.last_name }}</a></li>
-  {% endfor %}
-</ul>
+{% block title %}
+  Paws Portal - List of Members
+{% endblock %}
 
-</body>
-</html>
+{% block content %}
+  <h1>Members</h1>
+    
+  <ul>
+    {% for x in paw_members %}
+      <li><a href="details/{{ x.id }}">{{ x.first_name }} {{ x.last_name }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}
