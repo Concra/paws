@@ -4,13 +4,11 @@
   Details about {{ paw_member.first_name }} {{ paw_member.last_name }}
 {% endblock %}
 
-
 {% block content %}
-    <h1>{{ paw_member.first_name }} {{ paw_member.last_name }}</h1>
-    
-    <p>Phone: {{ paw_member.phone }}</p>
-    <p>Member since: {{ paw_member.joined_date }}</p>
-
-    <p>Back to <a href="/members">Members</a></p>
-
+<div class="mycard">
+  <h1>{{ paw_member.first_name }} {{ paw_member.last_name }}</h1>
+  <p>Phone: {{ paw_member.phone }}</p>
+  <p>Member since: {{ paw_member.joined_date }}</p>
+  <p>Back to <a href="/members">Members</a></p>
+</div>
 {% endblock %}
