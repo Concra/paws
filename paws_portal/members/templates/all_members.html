@@ -9,7 +9,7 @@
     <h1>Members</h1>  
     <ul>
       {% for x in paw_members %}
-        <li><a href="details/{{ x.id }}">{{ x.first_name }} {{ x.last_name }}</a></li>
+        <li><a href="details/{{ x.slug }}">{{ x.first_name }} {{ x.last_name }}</a></li>
       {% endfor %}
     </ul>
   </div>
