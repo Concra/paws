@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Paws Portal - List of Members
+{% endblock %}
+
+{% block content %}
+  <div class="mycard">
+    <h1>Members</h1>  
+    <ul>
+      {% for x in paw_members %}
+        <li><a href="details/{{ x.slug }}">{{ x.first_name }} {{ x.last_name }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}
