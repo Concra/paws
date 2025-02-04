@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import dotenv_values
+
+from config.config import DB_CONFIG
+
+env_config = dotenv_values(".env")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -74,11 +79,14 @@ WSGI_APPLICATION = 'paws_portal.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': DB_CONFIG['DB_NAME'],
+        'USER': DB_CONFIG['DB_USER'],
+        'PASSWORD': env_config.get('DB_PASSWORD'),
+        'HOST': DB_CONFIG['DB_HOST'],
+        'PORT': '5432'
     }
 }
 
